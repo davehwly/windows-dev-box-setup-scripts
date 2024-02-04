@@ -41,13 +41,13 @@ choco install -y visualstudio2022community --package-parameters="'--add Microsof
 Update-SessionEnvironment #refreshing env due to Git install
 
 #--- UWP Workload and installing Windows Template Studio ---
-choco install -y visualstudio2022-workload-azure
-choco install -y visualstudio2022-workload-universal
-choco install -y visualstudio2022-workload-manageddesktop
-choco install -y visualstudio2022-workload-nativedesktop
-choco install -y visualstudio2022-workload-netcoretools
-choco install -y visualstudio2022-workload-netcorebuildtools
-choco install -y visualstudio2022-workload-netcrossplat
+# choco install -y visualstudio2022-workload-azure
+# choco install -y visualstudio2022-workload-universal
+# choco install -y visualstudio2022-workload-manageddesktop
+# choco install -y visualstudio2022-workload-nativedesktop
+# choco install -y visualstudio2022-workload-netcoretools
+# choco install -y visualstudio2022-workload-netcorebuildtools
+# choco install -y visualstudio2022-workload-netcrossplat
 
 executeScript "WindowsTemplateStudio.ps1";
 executeScript "GetUwpSamplesOffGithub.ps1";
