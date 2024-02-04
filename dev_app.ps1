@@ -26,24 +26,28 @@ executeScript "SystemConfiguration.ps1";
 executeScript "FileExplorerSettings.ps1";
 executeScript "RemoveDefaultApps.ps1";
 executeScript "CommonDevTools.ps1";
+executeScript "Browsers.ps1";
 
 #--- Tools ---
 #--- Installing VS and VS Code with Git
 # See this for install args: https://chocolatey.org/packages/VisualStudio2017Community
 # https://docs.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community
 # https://docs.microsoft.com/en-us/visualstudio/install/use-command-line-parameters-to-install-visual-studio#list-of-workload-ids-and-component-ids
-# visualstudio2017community
+# visualstudio2022community
 # visualstudio2017professional
 # visualstudio2017enterprise
 
-choco install -y visualstudio2017community --package-parameters="'--add Microsoft.VisualStudio.Component.Git'"
+choco install -y visualstudio2022community --package-parameters="'--add Microsoft.VisualStudio.Component.Git'"
 Update-SessionEnvironment #refreshing env due to Git install
 
 #--- UWP Workload and installing Windows Template Studio ---
-choco install -y visualstudio2017-workload-azure
-choco install -y visualstudio2017-workload-universal
-choco install -y visualstudio2017-workload-manageddesktop
-choco install -y visualstudio2017-workload-nativedesktop
+choco install -y visualstudio2022-workload-azure
+choco install -y visualstudio2022-workload-universal
+choco install -y visualstudio2022-workload-manageddesktop
+choco install -y visualstudio2022-workload-nativedesktop
+choco install -y visualstudio2022-workload-netcoretools
+choco install -y visualstudio2022-workload-netcorebuildtools
+choco install -y visualstudio2022-workload-netcrossplat
 
 executeScript "WindowsTemplateStudio.ps1";
 executeScript "GetUwpSamplesOffGithub.ps1";
